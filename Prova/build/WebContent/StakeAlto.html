@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>StakeAlto</title>
+ <link rel="stylesheet" href="./bootstrap-italia.min.css">
+</head>
+
+<body>
+<!-- COMINCIO A CREARE LA NAV BAR IN ALTO-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div><img src="LogoGigi.jpg" alt="logo gigi"></div>
+      <div   class="container"> <a class="navbar-brand" href="/Prova/Servlet?action=homePage">ScommettereComeGigi</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+         <li class="nav-item active ">
+          
+            <form action="StakeAlto.jsp" method="post" style="height: 84px; width: 513px">  
+				Name:<input type="text" name="username"/>  Password:<input type="password" name="userpass"/> 
+				<input type="submit" value="login" formmethod="post"/>  
+			</form>  </c:if>
+			 
+			  
+			  
+		  </li>
+          <li class="nav-item active"> <a class="nav-link" href="#">Home</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Chi sono</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/scommetterecomegigi/?hl=it">Contatti</a> </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- FINISCE LA NAV BAR -->
+<div class="container">
+  <div class="row">
+    <div class="col">1 di 2</div>
+    <div class="col">2 di 2</div>
+  </div>
+  <div class="row">
+    <div class="col">1 di 3</div>
+    <div class="col">2 di 3</div>
+    <div class="col">3 di 3</div>
+  </div>
+</div>
+
+<script src="./bootstrap-italia.bundle.min.js"></script>
+</body>
+</html>
