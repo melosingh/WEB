@@ -47,6 +47,9 @@
       </div>
     </nav>
     <!-- FINISCE LA NAV BAR -->
+    
+    <div class="col-lg-2"> 
+<iframe id="webroundbuttonwidget2" file="webroundbuttonwidget" src="https://telegrambutton.com/webroundbuttonwidget.php?chat_id=Melo1908&showchatid=true&showmembercount=true&showmembercount=true&color=&pulse=true&textcolor=white&shadowval=z-depth-1&textval=join channel" border="1" style="border:20px;height: 100px;width: 100px;z-index:9999;position:fixed;bottom:0;right:0;"></iframe>      </div>
   
   
  <body bgcolor="#00ff00">

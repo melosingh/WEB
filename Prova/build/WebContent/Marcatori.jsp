@@ -33,9 +33,19 @@
 				<input type="submit" value="login" formmethod="post"/>  
 			</form>  </c:if>
 			  <c:if test= "${Loggato ==true}" >
-			   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()}
+			 <!--  LISTONE   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()} -->
 			   </c:if>
 			  
+			  <c:if test= "${Loggato ==true}" >
+		  <li class="nav.item>">
+		  <form action= "<%="/Prova/Servlet?key=logOut" %>" method="post" > 
+		  	 
+		  		<input  type="submit" id="submitButton" class="btn btn-warning btn-lg" value="LogOut">
+         <!-- 		<button onclick='logout()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">LogOut!</button>  	 -->
+         	  
+          </form>
+          <li>
+          </c:if>
 			  
 		  </li>
           <li class="nav-item active"> <a class="nav-link" href="#">Home</a> </li>
@@ -60,7 +70,7 @@
   				Prova a dare un occhiata alle vecchie schedine per farti un idea di quello che gioco	
   		</p>
   			<c:if test= "${Loggato !=true}" > 
-          <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Registrati! </button>  </c:if>
+          <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Registrati!</button>  </c:if>
     </div>
     
     <div class="col-6">
@@ -68,6 +78,9 @@
     </div>
   </div> 	
 </div>
+
+<div class="col-lg-2"> 
+<iframe id="webroundbuttonwidget2" file="webroundbuttonwidget" src="https://telegrambutton.com/webroundbuttonwidget.php?chat_id=Melo1908&showchatid=true&showmembercount=true&showmembercount=true&color=&pulse=true&textcolor=white&shadowval=z-depth-1&textval=join channel" border="1" style="border:20px;height: 100px;width: 100px;z-index:9999;position:fixed;bottom:0;right:0;"></iframe>      </div>
 
   <div class="card text-white bg-secondary my-4 text-center">
       <div class="card-body">
@@ -101,7 +114,7 @@
 
   <div class="card text-white bg-secondary my-4 text-center">
       <div class="card-body">
-        <p class="text-white m-0"> RUBRICHE DI GIGI </p>
+        <p class="text-white m-0"> CLASSIFICHE MARCATORI </p>
       </div>
     </div>
 <!--  INIZIO SEZIONE NEWS -->
@@ -162,6 +175,13 @@ function homePage(){
 	window.location.href="/Prova/Servlet?action=homePage";
 }
 
+</script>
+
+<script>
+function registrati()
+{
+	 window.location.href = "/Prova/Servlet?action=reindirizza";
+}
 </script>
 
 <script>

@@ -143,16 +143,16 @@ public class Servlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("login"))
 		{
-		String name=request.getParameter("username");
+		String email=request.getParameter("username");
 			String pass=request.getParameter("userpass");
             
-			System.out.println(name);
+			System.out.println(email);
 			System.out.println(pass);
 			
-			if(LoginDao.getInstance().validate(name, pass))
+			if(LoginDao.getInstance().validate(email, pass))
 			{
 				
-				UtenteLoggato utente=new UtenteLoggato(LoginDao.getInstance().getUtente(name, pass));
+				UtenteLoggato utente=new UtenteLoggato(LoginDao.getInstance().getUtente(email, pass));
 				if(utente.getNome().equals("Angelo"))
 					session.setAttribute("admin", true);
 				session.setAttribute("UtenteLoggato", utente);

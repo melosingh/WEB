@@ -2,60 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-    <!-- Stile CSS Youtube -->
-<style >
-.youtube-container { 
-display: block; 
-margin: 20px auto; 
-width: 100%; 
-max-width: 600px; 
-}
-
-.youtube-player { 
-display: block; 
-width: 100%; /* assuming that the video has a 16:9 ratio */ 
-padding-bottom: 56.25%; 
-overflow: hidden; 
-position: relative; 
-width: 100%; 
-height: 100%; 
-cursor: hand; 
-cursor: pointer; 
-display: block; 
-}
-
-img.youtube-thumb { 
-bottom: 0; 
-display: block; 
-left: 0; 
-margin: auto; 
-max-width: 100%; 
-width: 100%; 
-position: absolute; 
-right: 0; 
-top: 0; 
-height: auto 
-}
-
-div.play-button { 
-height: 72px; 
-width: 72px; 
-left: 50%; 
-top: 50%; 
-margin-left: -36px; 
-margin-top: -36px; 
-position: absolute; 
-background: url("http://i.imgur.com/TxzC70f.png") no-repeat; 
-}
-
-#youtube-iframe { 
-width: 100%; 
-height: 100%; 
-position: absolute; 
-top: 0; 
-left: 0; 
-}
-</style>
+  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,18 +35,31 @@ left: 0;
 				<input type="submit" value="login" formmethod="post"/>  
 			</form>  </c:if>
 			  <c:if test= "${Loggato ==true}" >
-			   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()}
+			  <!--  FUNZIONA  ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()} -->
 			   </c:if>
+			   
+			   <c:if test= "${Loggato ==true}" >
+		  		<li class="nav.item>">
+		  <form action= "<%="/Prova/Servlet?key=logOut" %>" method="post" > 
+		  	 
+		  		<input  type="submit" id="submitButton" class="btn btn-warning btn-lg" value="LogOut">
+         <!-- 		<button onclick='logout()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">LogOut!</button>  	 -->
+         	  
+          </form>
+          <li>
+          </c:if>
 			  
 			  
 		  </li>
           <li class="nav-item active"> <a class="nav-link" href="#">Home</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Chi sono</a> </li>
           <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/scommetterecomegigi/?hl=it">Contatti</a> </li>
         </ul>
       </div>
     </nav>
     <!-- FINISCE LA NAV BAR -->
+    
+    <div class="col-lg-2"> 
+<iframe id="webroundbuttonwidget2" file="webroundbuttonwidget" src="https://telegrambutton.com/webroundbuttonwidget.php?chat_id=Melo1908&showchatid=true&showmembercount=true&showmembercount=true&color=&pulse=true&textcolor=white&shadowval=z-depth-1&textval=join channel" border="1" style="border:20px;height: 100px;width: 100px;z-index:9999;position:fixed;bottom:0;right:0;"></iframe>      </div>
   
   
  <body>
@@ -115,7 +75,7 @@ left: 0;
   				Prova a dare un occhiata alle vecchie schedine per farti un idea di quello che gioco	
   		</p>
   			<c:if test= "${Loggato !=true}" > 
-          <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Registrati! </button>  </c:if>
+  			 <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Registrati!</button>  </c:if>
     </div>
     
     <div class="col-6">
@@ -126,7 +86,7 @@ left: 0;
 
   <div class="card text-white bg-secondary my-4 text-center">
       <div class="card-body">
-        <p class="text-white m-0">RUBRICHE DI GIGI</p>
+        <p class="text-white m-0"> GIGI TIPS </p>
       </div>
     </div>
 <div class="container">	 <!--  CONTAINER  -->
@@ -141,12 +101,9 @@ left: 0;
    </div><!--  FINE IMG DAL DB -->
     
    <div class="col h-100" >  <!--  INIZIO YOUTUBE -->	
-   		<h3><h3>Ti consiglio questo video per un analisi delle partite migliore</h3>
-   		<br><br></h3>
-          <div class="col-sm" class="youtube-container">
-			<!--  video preso a caso per mettere qualcosa -->
-   			<div class="youtube-player" data-id="EzW6m45PDnQ"></div> 
-			</div>
+   		<h3>	DOBBIAMO METTERE QUALCOSA QUI CHE NON HO IDEE</h3>
+   		
+   		
             
             <!--  TI LASCIO LO SPAZIO PER INSERIRE -->
             
@@ -156,7 +113,7 @@ left: 0;
 
 <div class="card text-white bg-secondary my-4 text-center">
       <div class="card-body">
-        <p class="text-white m-0">NEWS DI GIGI</p>
+        <p class="text-white m-0">CLASSIFICHE NEI MAGGIORI CAMPIONATI EUROPEI</p>
       </div>
     </div>
 
@@ -169,8 +126,8 @@ left: 0;
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">	TITOLO DELLA NEWS 1 </h5>
-          <p class="card-text">	TESTO DELLA NEWS 1</p>
+          <h5 class="card-title">	CHAMPIONS LEAGUE  </h5>
+          <p class="card-text">	 <iframe src="https://www.fctables.com/championsleague/iframe/?type=league-scores&amp;lang_id=5&amp;country=5&amp;stage=&amp;team=&amp;timezone=Europe/Rome&amp;time=24&amp;width=100%&amp;height=440&amp;font=Verdana&amp;fs=12&amp;lh=22&amp;bg=FFFFFF&amp;fc=333333&amp;logo=1&amp;tlink=1&amp;scoreb=f4454f&amp;scorefc=FFFFFF&amp;sgdcoreb=8f8d8d&amp;sgdcorefc=FFFFFF&amp;sh=1&amp;hfb=1&amp;hbc=17500a&amp;hfc=FFFFFF" width="100%" height="440" frameborder="0" scrolling="no"></iframe> </p>
         </div>
       </div>
     </div>
@@ -181,8 +138,8 @@ left: 0;
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"> TITOLO DELLA NEWS 2 </h5>
-          <p class="card-text">TESTO DELLA NEWS 3	</p>
+          <h5 class="card-title"> EUROPA LEAGUE </h5>
+          <p class="card-text"> <iframe frameborder="0" scrolling="no" width="100%" height="440" src="https://www.fctables.com/europaleague/iframe/?type=league-scores&amp;lang_id=5&amp;country=35&amp;stage=&amp;timezone=Europe/Rome&amp;time=24&amp;width=100%&amp;height=440&amp;font=Verdana&amp;fs=12&amp;lh=22&amp;bg=FFFFFF&amp;fc=333333&amp;logo=1&amp;tlink=1&amp;scoreb=f4454f&amp;scorefc=FFFFFF&amp;sgdcoreb=8f8d8d&amp;sgdcorefc=FFFFFF&amp;sh=1&amp;hfb=1&amp;hbc=17500a&amp;hfc=FFFFFF"></iframe>	</p>
         </div>
       </div>
     </div>
@@ -193,8 +150,8 @@ left: 0;
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">TESTO DELLA NEWS 3</h5>
-          <p class="card-text"> TESTO DELLA NEWS 3 </p>
+          <h5 class="card-title"> SERIE A  </h5>
+          <p class="card-text"> <iframe src="https://www.fctables.com/italy/serie-a/iframe/?type=league-scores&amp;lang_id=5&amp;country=108&amp;template=17&amp;stage=&amp;team=&amp;timezone=Europe/Rome&amp;time=24&amp;width=100%&amp;height=600&amp;font=Verdana&amp;fs=12&amp;lh=22&amp;bg=FFFFFF&amp;fc=333333&amp;logo=1&amp;tlink=1&amp;scoreb=f4454f&amp;scorefc=FFFFFF&amp;sgdcoreb=8f8d8d&amp;sgdcorefc=FFFFFF&amp;sh=1&amp;hfb=1&amp;hbc=17500a&amp;hfc=FFFFFF" width="100%" height="600" frameborder="0" scrolling="no"></iframe>  </p>
         </div>
       </div>
     </div>
@@ -210,6 +167,10 @@ left: 0;
         <p class="m-0 text-center text-white">Copyright © ScommettereComeGigi</p>
       </div>
 	</footer>
+	
+
+    
+    
 
 </body>
 
@@ -222,101 +183,6 @@ function homePage(){
 </script>
 
 <script>
-(function() {
-    var v = document.getElementsByClassName("youtube-player");
-    for (var n = 0; n < v.length; n++) {
-        var p = document.createElement("div");
-        p.innerHTML = labnolThumb(v[n].dataset.id);
-        p.onclick = labnolIframe;
-        v[n].appendChild(p);
-    }
-})();
- 
-function labnolThumb(id) {
-    return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
-}
- 
-function labnolIframe() {
-    var iframe = document.createElement("iframe");
-    iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("id", "youtube-iframe");
-    this.parentNode.replaceChild(iframe, this);
-}
-</script>
-
-
-
-
-
-
-				<!-- Stile CSS Youtube -->
-				<style >
-				.youtube-container { 
-				display: block; 
-				margin: 20px auto; 
-				width: 100%; 
-				max-width: 600px; 
-				}
-				
-				.youtube-player { 
-				display: block; 
-				width: 100%; /* assuming that the video has a 16:9 ratio */ 
-				padding-bottom: 56.25%; 
-				overflow: hidden; 
-				position: relative; 
-				width: 100%; 
-				height: 100%; 
-				cursor: hand; 
-				cursor: pointer; 
-				display: block; 
-				}
-				
-				img.youtube-thumb { 
-				bottom: 0; 
-				display: block; 
-				left: 0; 
-				margin: auto; 
-				max-width: 100%; 
-				width: 100%; 
-				position: absolute; 
-				right: 0; 
-				top: 0; 
-				height: auto 
-				}
-				
-				div.play-button { 
-				height: 72px; 
-				width: 72px; 
-				left: 50%; 
-				top: 50%; 
-				margin-left: -36px; 
-				margin-top: -36px; 
-				position: absolute; 
-				background: url("http://i.imgur.com/TxzC70f.png") no-repeat; 
-				}
-				
-				#youtube-iframe { 
-				width: 100%; 
-				height: 100%; 
-				position: absolute; 
-				top: 0; 
-				left: 0; 
-				}
-				</style>
-
-
-
-
-
-<script>
-
-function homePage(){
-	window.location.href="/Prova/Servlet?action=homePage";
-}
-
-</script>
-<script>
 function destra(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -328,6 +194,8 @@ function destra(){
 	xhttp.send();
 }
 </script>
+
+
 <script>
 function sinistra(){
 	var xhttp = new XMLHttpRequest();
@@ -341,94 +209,16 @@ function sinistra(){
 }
 </script>
 
-
 <script>
-(function() {
-    var v = document.getElementsByClassName("youtube-player");
-    for (var n = 0; n < v.length; n++) {
-        var p = document.createElement("div");
-        p.innerHTML = labnolThumb(v[n].dataset.id);
-        p.onclick = labnolIframe;
-        v[n].appendChild(p);
-    }
-})();
- 
-function labnolThumb(id) {
-    return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
-}
- 
-function labnolIframe() {
-    var iframe = document.createElement("iframe");
-    iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("id", "youtube-iframe");
-    this.parentNode.replaceChild(iframe, this);
+function registrati()
+{
+	 window.location.href = "/Prova/Servlet?action=reindirizza";
 }
 </script>
 
-
-
-
-
-
-				<!-- Stile CSS Youtube -->
-				<style >
-				.youtube-container { 
-				display: block; 
-				margin: 20px auto; 
-				width: 100%; 
-				max-width: 600px; 
-				}
-				
-				.youtube-player { 
-				display: block; 
-				width: 100%; /* assuming that the video has a 16:9 ratio */ 
-				padding-bottom: 56.25%; 
-				overflow: hidden; 
-				position: relative; 
-				width: 100%; 
-				height: 100%; 
-				cursor: hand; 
-				cursor: pointer; 
-				display: block; 
-				}
-				
-				img.youtube-thumb { 
-				bottom: 0; 
-				display: block; 
-				left: 0; 
-				margin: auto; 
-				max-width: 100%; 
-				width: 100%; 
-				position: absolute; 
-				right: 0; 
-				top: 0; 
-				height: auto 
-				}
-				
-				div.play-button { 
-				height: 72px; 
-				width: 72px; 
-				left: 50%; 
-				top: 50%; 
-				margin-left: -36px; 
-				margin-top: -36px; 
-				position: absolute; 
-				background: url("http://i.imgur.com/TxzC70f.png") no-repeat; 
-				}
-				
-				#youtube-iframe { 
-				width: 100%; 
-				height: 100%; 
-				position: absolute; 
-				top: 0; 
-				left: 0; 
-				}
-				</style>
 </html>
 
 
-</html>
 
 
 

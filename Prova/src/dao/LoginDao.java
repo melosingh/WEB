@@ -25,7 +25,7 @@ public class LoginDao  {
 			instance= new LoginDao();
 		return instance;
 	}
-public UtenteLoggato getUtente (String name,String pass)
+public UtenteLoggato getUtente (String email,String pass)
 {
 	UtenteLoggato u=null;
 	Connection connection=null;
@@ -33,11 +33,11 @@ public UtenteLoggato getUtente (String name,String pass)
 	try {
 		
 		System.out.println("entro dentro getUtente");
-	String utente="SELECT nome,cognome,email,pass FROM UtentiRegistrati WHERE nome=? and pass=?";
+	String utente="SELECT nome,cognome,email,pass FROM UtentiRegistrati WHERE email=? and pass=?";
 	PreparedStatement statement=connection.prepareStatement(utente);
 
 	  statement=connection.prepareStatement(utente);
-	  statement.setString(1,name);
+	  statement.setString(1,email);
 	  statement.setString(2, pass);
 		ResultSet result = statement.executeQuery();
 		  result=statement.executeQuery();
@@ -63,7 +63,7 @@ public UtenteLoggato getUtente (String name,String pass)
 	}
 	return u;
 }
-public  boolean validate(String name,String pass){  
+public  boolean validate(String email,String pass){  
 	
 		
 	Connection connection=null;
@@ -71,9 +71,9 @@ public  boolean validate(String name,String pass){
 	try {
 		
 		System.out.println("!entro nel LoginDao");
-		String query = "SELECT nome,pass FROM UtentiRegistrati WHERE nome=? and pass=? ";
+		String query = "SELECT email,pass FROM UtentiRegistrati WHERE email=? and pass=? ";
 		PreparedStatement statement=connection.prepareStatement(query);
-		statement.setString(1, name);
+		statement.setString(1, email);
 		statement.setString(2, pass);
 		
 		ResultSet result = statement.executeQuery();
