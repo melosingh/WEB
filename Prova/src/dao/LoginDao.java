@@ -12,7 +12,7 @@ public class LoginDao  {
 		try {
 			Class.forName("org.postgresql.Driver").newInstance();
 			System.out.println("LOCALHOST||||||");
-			dataSource=new DataSource("jdbc:postgresql://localhost:5433/postgres","postgres","Satwinder1.");
+			dataSource=new DataSource("jdbc:postgresql://kandula.db.elephantsql.com:5432/dddbhgfw","dddbhgfw","Ee9fRO8VTPytcUxh6wSL3S8t6oqzqno_");
 		} catch (Exception e) {
 			System.out.println("MySQLDAOFactory.class: failed to load MySQL JDBC driver\n" + e);
 			e.printStackTrace();
