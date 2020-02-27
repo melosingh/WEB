@@ -25,13 +25,13 @@
         <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <c:if test= "${Loggato !=true}" > 
+         <c:if test= "${Loggato !=true}" > 
             <form action="<%="/Prova/Servlet?action=login" %>" method="post" style="height: 84px; width: 513px">  
-			Username:</font> <input type="text"  name="username"/>> <br> Password:<input type="password" name="userpass"/>> 
-				 <input type="submit"   value="login" formmethod="post"/>  </a> 
+				<font color="white">Username</font> <input type="text" name="username"/>  <font color="white">Password</font><input type="password" name="userpass"/> 
+				<input type="submit" value="login" formmethod="post"/>  
 			</form>  </c:if>
-			  <c:if test= "${Loggato == true}" >
-			 <!--     ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()} FUNZIONA-->
+			  <c:if test= "${Loggato ==true}" >
+			   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()}
 			   </c:if>
 	  
 		  </li> 

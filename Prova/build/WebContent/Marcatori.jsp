@@ -17,26 +17,24 @@
   </head>
     <!-- COMINCIO A CREARE LA NAV BAR IN ALTO-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <div><img src="LogoGigi.jpg" alt="logo gigi"></div>
-      <div   class="container"> <a class="navbar-brand" href="/Prova/Servlet?action=homePage">ScommettereComeGigi</a>
-      </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    	<div><img src="LogoGigi.jpg" alt="logo gigi"> </div>
+        <div   class="container"> <a class="navbar-brand" href="/Prova/Servlet?action=homePage">ScommettereComeGigi</a> </div>
+     	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"  aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-         <li class="nav-item active ">
-        <c:if test= "${Loggato !=true}" > 
+         <c:if test= "${Loggato !=true}" > 
             <form action="<%="/Prova/Servlet?action=login" %>" method="post" style="height: 84px; width: 513px">  
 				<font color="white">Username</font> <input type="text" name="username"/>  <font color="white">Password</font><input type="password" name="userpass"/> 
 				<input type="submit" value="login" formmethod="post"/>  
 			</form>  </c:if>
 			  <c:if test= "${Loggato ==true}" >
-			 <!--  LISTONE   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()} -->
+			   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()}
 			   </c:if>
-			  
-			  <c:if test= "${Loggato ==true}" >
+	  
+		  </li> 
+		  
+		  <c:if test= "${Loggato ==true}" >
 		  <li class="nav.item>">
 		  <form action= "<%="/Prova/Servlet?key=logOut" %>" method="post" > 
 		  	 
@@ -46,10 +44,8 @@
           </form>
           <li>
           </c:if>
-			  
-		  </li>
+         	
           <li class="nav-item active"> <a class="nav-link" href="#">Home</a> </li>
-          
           <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/scommetterecomegigi/?hl=it">Contatti</a> </li>
         </ul>
       </div>
