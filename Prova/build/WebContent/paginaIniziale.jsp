@@ -85,6 +85,11 @@
         <p class="text-white m-0">VAI AGLI STAKE </p>
       </div>
     </div>
+    <h3>In questa sezione troverai le ultima schedine ,dedicate agli utenti registrati , suddivise per stake: </h3>
+    <h5>Stake alto=schedina in cui vengono selezionate le partite più sicure ,da giocare con il 50% del proprio budget  </h5>
+        <h5>Stake medio=schedina in cui vengono selezionate partite con una probabilità di successo media,da giocare con il 40% del proprio budget  </h5>
+        <h5>Stake basso=schedina in cui vi propongo le mie giocate azzardate ,da giocare con il 10% del proprio budget  </h5>
+    
    		 <c:if test= "${Loggato !=true}" > 
          <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Devi essere registrato!</button>  </c:if>
             <c:if test= "${Loggato ==true}" >
@@ -138,7 +143,7 @@
     </div>
     
     </div>
-    
+   
   </body>
     
     <!--  HO PROVATO A SISTEMARLO 3 VOLTE  -->
@@ -176,8 +181,7 @@ crossorigin="anonymous"></script>
 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 
 crossorigin="anonymous"></script>
-    
- 
+   
 
 <script>
  function caricaImmagini()
@@ -186,7 +190,7 @@ crossorigin="anonymous"></script>
  function account()
  {
  window.location.href="/Prova/Servlet?action=account"}
- 
+
 function registrati()
 {
 	 window.location.href = "/Prova/Servlet?action=reindirizza";
