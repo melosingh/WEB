@@ -96,9 +96,9 @@
    </div><!--  FINE IMG DAL DB -->
     
    <div class="col h-100" >  <!--  INIZIO YOUTUBE -->	
-   		<h3>	DOBBIAMO METTERE QUALCOSA QUI CHE NON HO IDEE</h3>
-   		
-   		
+   	
+   		<iframe width="600" height="700" src="https://rss.app/embed/v1/BHxq6F2RaR6eGLbT" frameBorder="0" 
+  ></iframe>
             
             <!--  TI LASCIO LO SPAZIO PER INSERIRE -->
             
