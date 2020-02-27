@@ -73,6 +73,7 @@ public class Servlet extends HttpServlet {
 		}
 		else if(request.getParameter("action")!=null &&request.getParameter("action").equalsIgnoreCase("stake"))
 		  {
+			System.out.println("Entro nella servlet con stake ");
 			Immagine imgStakeAlto= ImmagineDao.getInstance().getUltimoStakeAlto();
 			Immagine imgStakeMedio=ImmagineDao.getInstance().getUltimoStakeMedio();
 			Immagine imgStakeBasso=ImmagineDao.getInstance().getUltimoStakeBasso();
@@ -105,10 +106,10 @@ public class Servlet extends HttpServlet {
 		}
 		else if(request.getParameter("action")!=null &&request.getParameter("action").equalsIgnoreCase("marcatori"))
 		{
-			ArrayList immaginiMarcatori=new ArrayList(ImmagineDao.getInstance().trovaMarcatori());
-			request.getSession().setAttribute("immaginiMarcatori", immaginiMarcatori); 
-			request.getSession().setAttribute("indice",0); 
-			System.out.println("ENTRO in Marcatori all'interno della Servlet");
+			//ArrayList immaginiMarcatori=new ArrayList(ImmagineDao.getInstance().trovaMarcatori());
+			//request.getSession().setAttribute("immaginiMarcatori", immaginiMarcatori); 
+			//request.getSession().setAttribute("indice",0); 
+			//System.out.println("ENTRO in Marcatori all'interno della Servlet");
 			RequestDispatcher rd = request.getRequestDispatcher("/Marcatori.jsp");
 					rd.forward(request, response);
 					return ;
@@ -143,16 +144,16 @@ public class Servlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("login"))
 		{
-		String email=request.getParameter("username");
+			String name=request.getParameter("username");
 			String pass=request.getParameter("userpass");
             
-			System.out.println(email);
+			System.out.println(name);
 			System.out.println(pass);
 			
-			if(LoginDao.getInstance().validate(email, pass))
+			if(LoginDao.getInstance().validate(name, pass))
 			{
 				
-				UtenteLoggato utente=new UtenteLoggato(LoginDao.getInstance().getUtente(email, pass));
+				UtenteLoggato utente=new UtenteLoggato(LoginDao.getInstance().getUtente(name, pass));
 				if(utente.getNome().equals("Angelo"))
 					session.setAttribute("admin", true);
 				session.setAttribute("UtenteLoggato", utente);
@@ -202,6 +203,18 @@ public class Servlet extends HttpServlet {
 		rd.forward(request, response);
 		return;
 			}
+		else if(request.getParameter("key")!=null && request.getParameter("key").equalsIgnoreCase("logout"))
+		{
+			System.out.println("ENTRO IN LOGOUT");
+			session.setAttribute("Loggato", false);
+		//System.out.println(request.getParameter("Nome")+request.getParameter("Cognome")+request.getParameter("Username")+request.getParameter("Password"));
+	//	Registrazione registrazione=new Registrazione (request.getParameter("Nome"),request.getParameter("Cognome"),request.getParameter("Email"),request.getParameter("Password"));
+		//RegistrazioneDao.getInstance().add(registrazione);
+		RequestDispatcher rd = request.getRequestDispatcher("/paginaIniziale.jsp");
+		
+		rd.forward(request, response);
+		return;
+		}
 		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("scorrimentoMultipleS"))
 		{
 			System.out.println("Entro nella servlet con scorrimento !!!");
