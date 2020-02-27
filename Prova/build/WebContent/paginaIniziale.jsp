@@ -53,14 +53,14 @@
       </div>
     </nav>
     <!-- FINISCE LA NAV BAR -->
-  <body>
+  <body background="ImgSfondo2.jpg" >
   
     <div class="container">
       <div class="row my-4">
        
-        <div class="col-lg-7">
+        <div class="col-lg-7" >
           <h1>Scommettere come Gigi</h1>
-          <p>Benvenuti ragazzi , sono un tipster e sto in questo campo da molto
+         <p>Benvenuti ragazzi , sono un tipster e sto in questo campo da molto
             tempo , ho deciso di fare un sito web per tenere sempre aggiornati
             tutti i miei follower.... </p>
             
@@ -86,8 +86,8 @@
       </div>
     </div>
     <h3>In questa sezione troverai le ultima schedine ,dedicate agli utenti registrati , suddivise per stake: </h3>
-    <h5>Stake alto=schedina in cui vengono selezionate le partite più sicure ,da giocare con il 50% del proprio budget  </h5>
-        <h5>Stake medio=schedina in cui vengono selezionate partite con una probabilità di successo media,da giocare con il 40% del proprio budget  </h5>
+    <h5>Stake alto=schedina in cui vengono selezionate le partite piÃ¹ sicure ,da giocare con il 50% del proprio budget  </h5>
+        <h5>Stake medio=schedina in cui vengono selezionate partite con una probabilitÃ  di successo media,da giocare con il 40% del proprio budget  </h5>
         <h5>Stake basso=schedina in cui vi propongo le mie giocate azzardate ,da giocare con il 10% del proprio budget  </h5>
     
    		 <c:if test= "${Loggato !=true}" > 
@@ -154,7 +154,7 @@
       	<div class= "col-12">
       		<footer class="sticky-top py-5 bg-dark">
       
-        <p class="m-0 text-center text-white">Copyright © ScommettereComeGigi</p>
+        <p class="m-0 text-center text-white">Copyright Â© ScommettereComeGigi</p>
     <!--    <c:set var="log" scope="session" value="${UtenteLoggato.getNome()}"/>  
 		<c:out value="${UtenteLoggato.getNome()}"></c:out>
        <c:if test= '${admin}'>  -->
