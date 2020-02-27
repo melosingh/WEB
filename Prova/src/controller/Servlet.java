@@ -132,7 +132,7 @@ public class Servlet extends HttpServlet {
 			{
 				
 				UtenteLoggato utente=new UtenteLoggato(LoginDao.getInstance().getUtente(name, pass));
-				if(utente.getNome().equals("Angelo"))
+				if(utente.getEmail().equals("angeloboa.melito@gmail.com"))
 					session.setAttribute("admin", true);
 				session.setAttribute("UtenteLoggato", utente);
 			  
@@ -185,6 +185,7 @@ public class Servlet extends HttpServlet {
 		{
 			System.out.println("ENTRO IN LOGOUT");
 			session.setAttribute("Loggato", false);
+			session.setAttribute("admin", false);
 		//System.out.println(request.getParameter("Nome")+request.getParameter("Cognome")+request.getParameter("Username")+request.getParameter("Password"));
 	//	Registrazione registrazione=new Registrazione (request.getParameter("Nome"),request.getParameter("Cognome"),request.getParameter("Email"),request.getParameter("Password"));
 		//RegistrazioneDao.getInstance().add(registrazione);

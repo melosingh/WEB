@@ -27,7 +27,7 @@
         <ul class="navbar-nav ml-auto">
          <c:if test= "${Loggato !=true}" > 
             <form action="<%="/Prova/Servlet?action=login" %>" method="post" style="height: 84px; width: 513px">  
-				<font color="white">Username</font> <input type="text" name="username"/>  <font color="white">Password</font><input type="password" name="userpass"/> 
+				<font color="white">Email</font> <input type="text" name="username"/>  <font color="white">Password</font><input type="password" name="userpass"/> 
 				<input type="submit" value="login" formmethod="post"/>  
 			</form>  </c:if>
 			  <c:if test= "${Loggato ==true}" >
