@@ -32,12 +32,19 @@ public class Servlet extends HttpServlet {
 			rd.forward(request, response);
 			return ;
 		}
-		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("account"))
+		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("account"))
 		{
 			RequestDispatcher rd = request.getRequestDispatcher("/Account.jsp");
 			rd.forward(request, response);
 			return ;
 		}
+		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("ModificaDati"))
+		{
+			RequestDispatcher rd = request.getRequestDispatcher("/ModificaDati.jsp");
+			rd.forward(request, response);
+			return ;
+		}
+		
 		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("stakealto"))
 		{
 			System.out.println("SONO ENTRATO IN STAKE ALTO");
@@ -176,10 +183,25 @@ public class Servlet extends HttpServlet {
 			return;
 			
 		}
+		else if(request.getParameter("key")!=null && request.getParameter("key").equalsIgnoreCase("CaricaDati"))
+		{
+			String Nome =request.getParameter("Nome");
+			String Cognome=request.getParameter("Cognome");
+			String Email=request.getParameter("Email");
+			String Password=request.getParameter("Password");
+			System.out.println("ho presp");
+			System.out.println(Password);
+			
+			RegistrazioneDao.getInstance().modifica(Nome, Cognome, Email, Password);
+				session.invalidate();
+			RequestDispatcher rd = request.getRequestDispatcher("/paginaIniziale.jsp");
+			
+			rd.forward(request, response);
+			return;
+			
+		}
 		else if(request.getParameter("key")!=null && request.getParameter("key").equalsIgnoreCase("registrati"))
 		{
-			System.out.println("ENTROOOOOOOOOOOOOOOOOOO");
-		//System.out.println(request.getParameter("Nome")+request.getParameter("Cognome")+request.getParameter("Username")+request.getParameter("Password"));
 		Registrazione registrazione=new Registrazione (request.getParameter("Nome"),request.getParameter("Cognome"),request.getParameter("Email"),request.getParameter("Password"));
 		RegistrazioneDao.getInstance().add(registrazione);
 		RequestDispatcher rd = request.getRequestDispatcher("/paginaIniziale.jsp");
@@ -189,12 +211,9 @@ public class Servlet extends HttpServlet {
 			}
 		else if(request.getParameter("key")!=null && request.getParameter("key").equalsIgnoreCase("logout"))
 		{
-			System.out.println("ENTRO IN LOGOUT");
 			session.setAttribute("Loggato", false);
 			session.setAttribute("admin", false);
-		//System.out.println(request.getParameter("Nome")+request.getParameter("Cognome")+request.getParameter("Username")+request.getParameter("Password"));
-	//	Registrazione registrazione=new Registrazione (request.getParameter("Nome"),request.getParameter("Cognome"),request.getParameter("Email"),request.getParameter("Password"));
-		//RegistrazioneDao.getInstance().add(registrazione);
+		session.invalidate();
 		RequestDispatcher rd = request.getRequestDispatcher("/paginaIniziale.jsp");
 		
 		rd.forward(request, response);

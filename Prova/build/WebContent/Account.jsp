@@ -63,13 +63,14 @@
        			
        		<font  size="8">Account :</font><br />
        		<font  size="6">Nome: </font>
-       		<font  size="6">${UtenteLoggato.getNome() }</font><br />
+       		<font  size="6">${UtenteLoggato.getNome() }</font> <br />
        		<font  size="6">Cognome: </font>
        		<font  size="6">${UtenteLoggato.getCognome() }</font><br />
        		<font  size="6">Email: </font>
        		<font  size="6">${UtenteLoggato.getEmail() }</font><br />
        		<font  size="6">Passowrd: </font>
        		<font  size="6">${UtenteLoggato.getPassword() }</font><br />
+       		<button onclick= "ModificaDati()" type="button" class="btn btn-primary btn-xs">Modifica</button>
        	
        		</div>
 		 </div>
@@ -127,7 +128,10 @@ function registrati()
 {
 	 window.location.href = "/Prova/Servlet?action=reindirizza";
 }
-
+function ModificaDati()
+{
+	 window.location.href = "/Prova/Servlet?action=ModificaDati";
+}
 function homePage(){
 	window.location.href="/Prova/Servlet?action=homePage";
 }

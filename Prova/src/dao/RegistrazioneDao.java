@@ -31,6 +31,36 @@ public class RegistrazioneDao {
 	public List<String> findAll() {
 		return null;
 }
+	
+	public void modifica(String nome,String cognome,String email,String pass)
+	{
+		Connection connection = null;
+		
+		try {
+			connection = this.dataSource.getConnection();
+			
+			String query = "UPDATE utentiregistrati SET  nome=?, cognome=? ,email=? ,pass=? ";
+			PreparedStatement statement=connection.prepareStatement(query);
+			statement.setString(1,nome);
+			statement.setString(2,cognome);
+			statement.setString(3,email);
+			statement.setString(4,pass);
+			//statement.setString(5,registrazione.getUsername());
+
+			
+			statement.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		
+	}
 	public void add(Registrazione registrazione)
 	{
 		Connection connection = null;
