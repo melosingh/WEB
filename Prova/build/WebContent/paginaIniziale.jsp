@@ -25,17 +25,17 @@
         <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+      
          <c:if test= "${Loggato !=true}" > 
             <form action="<%="/Prova/Servlet?action=login" %>" method="post" style="height: 84px; width: 513px">  
 				<font color="white">Email</font> <input type="text" name="username"/>  <font color="white">Password</font><input type="password" name="userpass"/> 
 				<input type="submit" value="login" formmethod="post"/>  
 			</form>  </c:if>
-			  <c:if test= "${Loggato ==true}" >
-			   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()}
-			   </c:if>
+			  
 	  
 		  </li> 
-		  
+		   <c:if test= "${Loggato ==true}" >
+				<button onclick='account()' type="button" class="btn btn-primary btn-xs">Account</button>		   </c:if>
 		  <c:if test= "${Loggato ==true}" >
 		  <li class="nav.item>">
 		  <form action= "<%="/Prova/Servlet?key=logOut" %>" method="post" > 
@@ -181,7 +181,9 @@ crossorigin="anonymous"></script>
  function caricaImmagini()
  {
  window.location.href="/Prova/Servlet?action=caricaImmagini"}
- 
+ function account()
+ {
+ window.location.href="/Prova/Servlet?action=account"}
  
 function registrati()
 {

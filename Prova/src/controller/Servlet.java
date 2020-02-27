@@ -32,6 +32,12 @@ public class Servlet extends HttpServlet {
 			rd.forward(request, response);
 			return ;
 		}
+		if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("account"))
+		{
+			RequestDispatcher rd = request.getRequestDispatcher("/Account.jsp");
+			rd.forward(request, response);
+			return ;
+		}
 		else if(request.getParameter("action")!=null && request.getParameter("action").equalsIgnoreCase("stakealto"))
 		{
 			System.out.println("SONO ENTRATO IN STAKE ALTO");

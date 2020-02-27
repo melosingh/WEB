@@ -30,12 +30,11 @@
 				<font color="white">Username</font> <input type="text" name="username"/>  <font color="white">Password</font><input type="password" name="userpass"/> 
 				<input type="submit" value="login" formmethod="post"/>  
 			</form>  </c:if>
-			  <c:if test= "${Loggato ==true}" >
-			   ${UtenteLoggato.getNome()}   ${UtenteLoggato.getCognome()}
-			   </c:if>
+			 >
 	  
 		  </li> 
-		  
+		   <c:if test= "${Loggato ==true}" >
+				<button onclick='account()' type="button" class="btn btn-primary btn-xs">Account</button>		   </c:if>
 		  <c:if test= "${Loggato ==true}" >
 		  <li class="nav.item>">
 		  <form action= "<%="/Prova/Servlet?key=logOut" %>" method="post" > 
@@ -175,7 +174,9 @@
 function homePage(){
 	window.location.href="/Prova/Servlet?action=homePage";
 }
-
+function account()
+{
+window.location.href="/Prova/Servlet?action=account"}
 </script>
 
 <script>
