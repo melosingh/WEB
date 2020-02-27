@@ -115,51 +115,26 @@
 </div>
 <div class="card text-white bg-secondary my-4 text-center">
       <div class="card-body">
-        <p class="text-white m-0">RUBRICHE DI GIGI</p>
+        <p class="text-white m-0">SEGUI ANCHE </p>
       </div>
     </div>
 
 <!--  INIZIO SEZIONE NEWS -->
+
 <div class="container">
 	<div class="row">
-  <div class="col-12 col-lg-4">
-    <!--start card-->
-    <div class="card-wrapper">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">	TITOLO DELLA NEWS 1 </h5>
-          <p class="card-text">	TESTO DELLA NEWS 1</p>
-        </div>
-      </div>
+	<div class="col-8">
+ 		<rssapp-list id="QsGhzCuUjDpvjSTn"></rssapp-list><script src="https://widget.rss.app/v1/list.js" 
+ 		type="text/javascript" async></script></div>
+ 	<div class="col-4">
+ 	<iframe width="600" height="700" src="https://rss.app/embed/v1/xb4NaHpeS9tPM82O" frameBorder="0" ></iframe>
+ 	</div>
+ 		
     </div>
     <!--end card-->
   </div>
-  <div class="col-12 col-lg-4">
-    <!--start card-->
-    <div class="card-wrapper">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"> TITOLO DELLA NEWS 2 </h5>
-          <p class="card-text">TESTO DELLA NEWS 3	</p>
-        </div>
-      </div>
-    </div>
-    <!--end card-->
-  </div>
-  <div class="col-12 col-lg-4">
-    <!--start card-->
-    <div class="card-wrapper">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">TESTO DELLA NEWS 3</h5>
-          <p class="card-text"> TESTO DELLA NEWS 3 </p>
-        </div>
-      </div>
-    </div>
-    <!--end card-->
-  </div>
-</div>					
-</div>
+ 
+
 
 </body>
 	

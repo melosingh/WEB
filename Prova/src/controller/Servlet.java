@@ -44,17 +44,7 @@ public class Servlet extends HttpServlet {
 			request.getSession().setAttribute("immaginiMultipleCampionati", immaginiMultipleCampionati); 
 			request.getSession().setAttribute("indice",1); 
 
-			/* Prendo un array di stringhe come fatto sopra per le immagini */
-//parte FATTA DA CICCIO
-			//ArrayList<Integer> list = new ArrayList<>();
 			
-			/*for(int i=1;i<11;i++)
-				list.add(i);
-//FINE PARTE FATTA DA CICCIO			
-			request.getSession().setAttribute("multiple", list);
-			request.getSession().setAttribute("indice", 0); 
-			
-		*/
 			RequestDispatcher rd = request.getRequestDispatcher("/StakeAlto.jsp");
 			rd.forward(request, response);
 			return ;
@@ -97,30 +87,18 @@ public class Servlet extends HttpServlet {
 			rd.forward(request, response);
 			return ;
 		}
-		else if(request.getParameter("action")!=null &&request.getParameter("action").equalsIgnoreCase("stakemedio"))
-		{
-			System.out.println("ENTRO in stakealto all'interno della Servlet");
-			RequestDispatcher rd = request.getRequestDispatcher("/StakeMedio.jsp");
-					rd.forward(request, response);
-					return ;
-		}
+		
 		else if(request.getParameter("action")!=null &&request.getParameter("action").equalsIgnoreCase("marcatori"))
 		{
-			//ArrayList immaginiMarcatori=new ArrayList(ImmagineDao.getInstance().trovaMarcatori());
-			//request.getSession().setAttribute("immaginiMarcatori", immaginiMarcatori); 
-			//request.getSession().setAttribute("indice",0); 
-			//System.out.println("ENTRO in Marcatori all'interno della Servlet");
+			ArrayList immaginiMarcatori=new ArrayList(ImmagineDao.getInstance().trovaMarcatori());
+			request.getSession().setAttribute("immaginiMarcatori", immaginiMarcatori); 
+			request.getSession().setAttribute("indice",0); 
+			System.out.println("ENTRO in Marcatori all'interno della Servlet");
 			RequestDispatcher rd = request.getRequestDispatcher("/Marcatori.jsp");
 					rd.forward(request, response);
 					return ;
 		}
-		else if(request.getParameter("action")!=null &&request.getParameter("action").equalsIgnoreCase("stakebasso"))
-		{
-			System.out.println("ENTRO in stakeBasso all'interno della Servlet");
-			RequestDispatcher rd = request.getRequestDispatcher("/StakeBasso.jsp");
-					rd.forward(request, response);
-					return ;
-		}
+		
 		else if(request.getParameter("action")!=null &&request.getParameter("action").equalsIgnoreCase("listoni"))
 		{
 			ArrayList immaginiListoni=new ArrayList(ImmagineDao.getInstance().trovaListoni());
