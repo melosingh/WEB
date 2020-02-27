@@ -85,9 +85,11 @@
         <p class="text-white m-0">VAI AGLI STAKE </p>
       </div>
     </div>
-   		
-    	<div class="card-footer text-center"> <a href='/Prova/Servlet?action=stake' class="btn btn-warning">Approfondisci</a>
-    	
+   		 <c:if test= "${Loggato !=true}" > 
+         <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Devi essere registrato!</button>  </c:if>
+            <c:if test= "${Loggato ==true}" >
+    	<div class="card-footer text-center"> <a href='/Prova/Servlet?action=stake' class="btn btn-warning">Approfondisci</a></c:if>
+    	</div>
 
     <!-- creo il secondo separatore -->
     <div class="card text-white bg-secondary my-4 text-center">

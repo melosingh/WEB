@@ -39,7 +39,7 @@
 			  
 			  
 		  </li>
-          <li class="nav-item active"> <a class="nav-link" href="#">Home</a> </li>
+          <li class="nav-item active"> <a class="nav-link" href="/Prova/Servlet?action=homePage">Home</a> </li>
           <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/scommetterecomegigi/?hl=it">Contatti</a> </li>
         </ul>
       </div>
@@ -127,7 +127,7 @@ crossorigin="anonymous"></script>
       
         <p class="m-0 text-center text-white">Copyright © ScommettereComeGigi</p>
        <c:set var="log" scope="session" value="${UtenteLoggato.getNome()}"/>  
-	
+		<c:out value="${UtenteLoggato.getNome()}"></c:out>
        <c:if test= '${admin}'>
         <button onclick="caricaImmagini()" id=BottoneCaricaImmagini class="btn btn-warning btn-lg" href="/Prova/Servlet/action?=caricaImmagini">CaricaImmagini</button>
      </c:if>
