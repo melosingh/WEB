@@ -59,11 +59,11 @@
       <div class="row my-4">
        
         <div class="col-lg-7" >
-          <h1>Scommettere come Gigi</h1>
+       <font color="white"> <h1>Scommettere come Gigi</h1>
          <p>Benvenuti ragazzi , sono un tipster e sto in questo campo da molto
             tempo , ho deciso di fare un sito web per tenere sempre aggiornati
             tutti i miei follower.... </p>
-            
+            </font>  
          <c:if test= "${Loggato !=true}" > 
           <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Registrati!</button>  </c:if>
          
@@ -85,10 +85,10 @@
         <p class="text-white m-0">VAI AGLI STAKE </p>
       </div>
     </div>
-    <h3>In questa sezione troverai le ultima schedine ,dedicate agli utenti registrati , suddivise per stake: </h3>
+   <font color="white">  <h3>In questa sezione troverai le ultima schedine ,dedicate agli utenti registrati , suddivise per stake: </h3>
     <h5>Stake alto=schedina in cui vengono selezionate le partite più sicure ,da giocare con il 50% del proprio budget  </h5>
         <h5>Stake medio=schedina in cui vengono selezionate partite con una probabilità di successo media,da giocare con il 40% del proprio budget  </h5>
-        <h5>Stake basso=schedina in cui vi propongo le mie giocate azzardate ,da giocare con il 10% del proprio budget  </h5>
+        <h5>Stake basso=schedina in cui vi propongo le mie giocate azzardate ,da giocare con il 10% del proprio budget  </h5></font>
     
    		 <c:if test= "${Loggato !=true}" > 
          <button onclick='registrati()' id=BottoneRegistrati class="btn btn-warning btn-lg" href="#">Devi essere registrato!</button>  </c:if>
